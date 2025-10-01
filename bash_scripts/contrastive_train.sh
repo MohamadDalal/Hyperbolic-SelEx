@@ -1,4 +1,4 @@
-PYTHON='/home/sarah/miniconda3/envs/PT/bin/python'
+PYTHON='/home/vap-moda/Documents/Github/Hyperbolic-SelEx/venv/bin/python'
 
 hostname
 nvidia-smi
@@ -6,15 +6,15 @@ nvidia-smi
 export CUDA_VISIBLE_DEVICES=0
 
 # Get unique log file,
-SAVE_DIR=/home/sarah/PycharmProjects/generalized-category-discovery-main/osr_novel_categories/dev_outputs/
+SAVE_DIR=/home/vap-moda/Documents/Github/Hyperbolic-SelEx/osr_novel_categories/dev_outputs/
 
 EXP_NUM=$(ls ${SAVE_DIR} | wc -l)
 EXP_NUM=$((${EXP_NUM}+1))
 echo $EXP_NUM
 
 ${PYTHON} -m methods.contrastive_training.contrastive_training \
-            --dataset_name 'cifar10' \
-            --batch_size 128 \
+            --dataset_name 'cub' \
+            --batch_size 64 \
             --grad_from_block 10 \
             --epochs 200 \
             --base_model vit_dino \

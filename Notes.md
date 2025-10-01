@@ -1,0 +1,1 @@
+extract_labeled_protos only works with images[0], because it only works with one of the two contrastive learning views
